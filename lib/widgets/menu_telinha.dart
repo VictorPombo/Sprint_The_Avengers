@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
-import '../Screen/lista_etica_page.dart';  // Importe a ListaEticaPage
-import '../Screen/lista_favoritos_page.dart';  // Importe a ListaFavoritosPage
+import '../Screen/lista_etica_page.dart';  // Certifique-se de que o caminho está correto
+import '../Screen/lista_favoritos_page.dart';  // Certifique-se de que o caminho está correto
+import '../main.dart';
 
 class MenuTelinha extends StatelessWidget {
   const MenuTelinha({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Inicialmente, lista vazia de favoritos
+    
+
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
           const DrawerHeader(
             decoration: BoxDecoration(
-              color: Color.fromRGBO(138, 167, 236, 100),
+              color: Color.fromRGBO(138, 167, 236, 1),
             ),
             child: Text(
               'Menu',
@@ -27,7 +31,10 @@ class MenuTelinha extends StatelessWidget {
             leading: Icon(Icons.home),
             title: Text('Página Inicial'),
             onTap: () {
-              Navigator.pop(context);  // Fecha o drawer
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomeScreen()),
+                );  
             },
           ),
           ListTile(
@@ -46,7 +53,9 @@ class MenuTelinha extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ListaFavoritosPage()),  // Navega para ListaFavoritosPage
+                MaterialPageRoute(
+                  builder: (context) => ListaFavoritosPage(),  // Passando a lista de favoritos (vazia neste caso)
+                ),
               );
             },
           ),

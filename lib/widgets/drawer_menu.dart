@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_menu/Screen/lista_etica_page.dart';
-import 'package:projeto_menu/Screen/lista_favoritos_page.dart';
-
+import '../Screen/lista_favoritos_page.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Inicialmente, vamos passar uma lista de favoritos vazia
+    final List<String> favoritos = []; // Substitua por sua lista de favoritos real, se necessário
+
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -36,7 +38,9 @@ class DrawerMenu extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ListaFavoritosPage()),
+                MaterialPageRoute(
+                  builder: (context) => ListaFavoritosPage(), // Passando a lista de favoritos
+                ),
               );
             },
           ),

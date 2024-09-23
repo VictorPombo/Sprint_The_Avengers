@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
-import './widgets/menu_telinha.dart';  // Importa o menu lateral
-import './Screen/lista_etica_page.dart';  // Importe o arquivo lista_etica_page.dart
-import './Screen/lista_favoritos_page.dart';  // Importe o arquivo lista_favoritos_page.dart
-import './BackGroundColor/gradient_background.dart'; // Importe o widget GradientBackground
+import 'package:provider/provider.dart';
+import './widgets/menu_telinha.dart';
+import './Screen/lista_etica_page.dart';
+import './Screen/lista_favoritos_page.dart';
+import './BackGroundColor/gradient_background.dart';
+import './widgets/favoritos_manager.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => FavoritosManager()),  // Provê o FavoritosManager
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -34,7 +43,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Color.fromRGBO(138, 167, 236, 100),
       ),
       drawer: const MenuTelinha(),  // Mantém o menu lateral
-      body: GradientBackground( // Envolvendo o conteúdo com GradientBackground
+      body: GradientBackground(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -44,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ListaEticaPage()),  // Navega para ListaEticaPage
+                    MaterialPageRoute(builder: (context) => ListaEticaPage()),
                   );
                 },
                 child: Card(
@@ -56,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                     padding: EdgeInsets.all(16.0),
                     width: 200,
                     height: 100,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Lista',
                         style: TextStyle(fontSize: 24),
@@ -65,13 +74,13 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Card para a página de Favoritos
               GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ListaFavoritosPage()),  // Navega para ListaFavoritosPage
+                    MaterialPageRoute(builder: (context) => ListaFavoritosPage()),
                   );
                 },
                 child: Card(
@@ -83,7 +92,7 @@ class HomeScreen extends StatelessWidget {
                     padding: EdgeInsets.all(16.0),
                     width: 200,
                     height: 100,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Favoritos',
                         style: TextStyle(fontSize: 24),
