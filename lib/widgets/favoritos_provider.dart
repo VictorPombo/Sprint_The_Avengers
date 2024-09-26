@@ -13,6 +13,6 @@ class FavoritosProvider with ChangeNotifier {
     } else {
       _favoritos.add(item);
     }
-    notifyListeners();  // Notifica os ouvintes sobre a mudança
+    notifyListeners();  
   }
 }

@@ -7,8 +7,8 @@ class DrawerMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Inicialmente, vamos passar uma lista de favoritos vazia
-    final List<String> favoritos = []; // Substitua por sua lista de favoritos real, se necessário
+    
+    final List<String> favoritos = []; 
 
     return Drawer(
       child: ListView(

@@ -5,6 +5,7 @@ import './Screen/lista_etica_page.dart';
 import './Screen/lista_favoritos_page.dart';
 import './BackGroundColor/gradient_background.dart';
 import './widgets/favoritos_manager.dart';
+import './Screen/login_page.dart';  // Importa a LoginPage
 
 void main() {
   runApp(
@@ -27,8 +28,27 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),  // Mantém o HomeScreen como a página inicial
+      home: const AuthCheck(),  // Verifica o estado de autenticação
     );
+  }
+}
+
+// Classe para decidir qual página exibir
+class AuthCheck extends StatelessWidget {
+  const AuthCheck({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // Aqui você deve implementar a lógica de autenticação real
+    // Vamos simular uma variável de autenticação por enquanto.
+    bool isAuthenticated = false;  // Simulação, troque isso por uma verificação real
+
+    // Verifica se o usuário está autenticado ou não
+    if (isAuthenticated) {
+      return const HomeScreen();  // Redireciona para a HomeScreen se autenticado
+    } else {
+      return const LoginPage();  // Redireciona para a LoginPage se não autenticado
+    }
   }
 }
 
@@ -40,15 +60,15 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Página Inicial'),
-        backgroundColor: Color.fromRGBO(138, 167, 236, 100),
+        backgroundColor: const Color.fromRGBO(138, 167, 236, 100),
       ),
-      drawer: const MenuTelinha(),  // Mantém o menu lateral
+      drawer: const MenuTelinha(),  
       body: GradientBackground(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Card para a página de Lista
+              
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -62,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   child: Container(
-                    padding: EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(16.0),
                     width: 200,
                     height: 100,
                     child: const Center(
@@ -75,7 +95,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              // Card para a página de Favoritos
+              
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -89,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   child: Container(
-                    padding: EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(16.0),
                     width: 200,
                     height: 100,
                     child: const Center(
