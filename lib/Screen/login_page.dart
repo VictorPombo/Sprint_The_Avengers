@@ -18,14 +18,18 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
-        backgroundColor: const Color(0xFF8AA7EC),  
+        backgroundColor: Color(0xFF002894),  
         elevation: 0,
       ),
       body: Container(
         padding: const EdgeInsets.all(16.0),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF8AA7EC), Color(0xFF5F85DB)],
+            colors: [Color(0xFF051937),
+            Color(0xFF002265),
+            Color(0xFF002894),
+            Color(0xFF0027C1),
+            Color(0xFF1B12EB),],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -49,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF5F85DB),
+                          color: Color(0xFF1B12EB),
                         ),
                       ),
                       const SizedBox(height: 10),
@@ -111,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
-                          backgroundColor: const Color(0xFF5F85DB),  
+                          backgroundColor: const Color.fromARGB(255, 248, 249, 250),  
                         ),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
@@ -131,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         child: const Text(
                           'Esqueceu sua senha?',
-                          style: TextStyle(color: Color(0xFF5F85DB)),
+                          style: TextStyle(color: Color(0xFF1B12EB)),
                         ),
                       ),
                     ],

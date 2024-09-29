@@ -20,7 +20,7 @@ class ListaEticaPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Lista de Ética'),
-        backgroundColor: Color.fromRGBO(138, 167, 236, 1),
+        backgroundColor: Color(0xFF002894),
         leading: Row(
           children: [
             IconButton(
@@ -68,7 +68,7 @@ class ListaEticaPage extends StatelessWidget {
               child: Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
-                  side: BorderSide(color: Colors.blueAccent, width: 1),
+                  side: BorderSide(color: Color(0xFF1B12EB), width: 1),
                 ),
                 elevation: 3,
                 child: ListTile(
@@ -122,7 +122,7 @@ class DetalheEticaPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(titulo),
-        backgroundColor: Color.fromRGBO(138, 167, 236, 1),
+        backgroundColor: Color(0xFF1B12EB),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),  // Ícone de seta para voltar
           onPressed: () {
@@ -135,7 +135,7 @@ class DetalheEticaPage extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Text(
             'Este é o texto de exemplo sobre $titulo. Aqui você pode colocar uma descrição detalhada sobre o item favoritado.',
-            style: TextStyle(fontSize: 18, color: Colors.black87),
+            style: TextStyle(fontSize: 18, color: const Color.fromARGB(221, 255, 255, 255)),
           ),
         ),
       ),

@@ -18,7 +18,7 @@ class DrawerMenu extends StatelessWidget {
             accountName: Text('Usuário'),
             accountEmail: Text('email@exemplo.com'),
             currentAccountPicture: CircleAvatar(
-              backgroundColor: Colors.blue,
+              backgroundColor: Color(0xFF002894),
               child: Text('U'),
             ),
           ),

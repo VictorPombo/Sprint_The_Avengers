@@ -15,7 +15,7 @@ class MenuTelinha extends StatelessWidget {
         children: <Widget>[
           DrawerHeader(
             decoration: const BoxDecoration(
-              color: Color(0xFF8AA7EC),
+              color: Color(0xFF002894),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

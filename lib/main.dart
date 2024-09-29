@@ -5,13 +5,13 @@ import './Screen/lista_etica_page.dart';
 import './Screen/lista_favoritos_page.dart';
 import './BackGroundColor/gradient_background.dart';
 import './widgets/favoritos_manager.dart';
-import './Screen/login_page.dart';  // Importa a LoginPage
+import './Screen/login_page.dart';  
 
 void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => FavoritosManager()),  // Provê o FavoritosManager
+        ChangeNotifierProvider(create: (context) => FavoritosManager()),  
       ],
       child: const MyApp(),
     ),
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Projeto Menu Telinha',
+      title: 'Projeto Menu',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -41,7 +41,6 @@ class AuthCheck extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isAuthenticated = false;  
 
-    
     if (isAuthenticated) {
       return const HomeScreen();  // Redireciona para a HomeScreen se autenticado
     } else {
@@ -58,7 +57,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Página Inicial'),
-        backgroundColor: const Color.fromRGBO(138, 167, 236, 100),
+        backgroundColor: Color(0xFF002894),
       ),
       drawer: const MenuTelinha(),  
       body: GradientBackground(
@@ -84,9 +83,9 @@ class HomeScreen extends StatelessWidget {
                     width: 200,
                     height: 100,
                     child: const Center(
-                      child: Text(
-                        'Lista',
-                        style: TextStyle(fontSize: 24),
+                      child: Icon(
+                        Icons.list,
+                        size: 50,  
                       ),
                     ),
                   ),
@@ -111,9 +110,9 @@ class HomeScreen extends StatelessWidget {
                     width: 200,
                     height: 100,
                     child: const Center(
-                      child: Text(
-                        'Favoritos',
-                        style: TextStyle(fontSize: 24),
+                      child: Icon(
+                        Icons.favorite,
+                        size: 50,  
                       ),
                     ),
                   ),
