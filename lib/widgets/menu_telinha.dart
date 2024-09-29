@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../Screen/lista_etica_page.dart';
 import '../Screen/lista_favoritos_page.dart';
 import '../Screen/login_page.dart'; 
+import '../main.dart'; // Certifique-se de importar a página Home
 
 class MenuTelinha extends StatelessWidget {
   const MenuTelinha({super.key});
@@ -33,6 +34,16 @@ class MenuTelinha extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.home),
+            title: const Text('Home'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomeScreen()), // Direcione para a página Home
+              );
+            },
           ),
           ListTile(
             leading: const Icon(Icons.list),
