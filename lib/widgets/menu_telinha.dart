@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../Screen/lista_etica_page.dart';
 import '../Screen/lista_favoritos_page.dart';
 import '../Screen/login_page.dart'; 
-import '../main.dart'; // Certifique-se de importar a página Home
+import '../main.dart'; 
 
 class MenuTelinha extends StatelessWidget {
   const MenuTelinha({super.key});

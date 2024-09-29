@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../BackGroundColor/gradient_background.dart';
 import '../widgets/favoritos_manager.dart';
-import '../widgets/menu_telinha.dart'; // Certifique-se de que o menu está importado
+import '../widgets/menu_telinha.dart'; 
 
 class ListaFavoritosPage extends StatelessWidget {
   @override

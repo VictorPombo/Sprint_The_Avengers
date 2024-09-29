@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import '../BackGroundColor/gradient_background.dart';
 import './lista_favoritos_page.dart';
 import '../widgets/favoritos_manager.dart';
-import '../widgets/menu_telinha.dart';  // Certifique-se de que o menu está importado
+import '../widgets/menu_telinha.dart'; 
 
 class ListaEticaPage extends StatelessWidget {
   final List<String> eticaItems = [
@@ -26,7 +26,7 @@ class ListaEticaPage extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.arrow_back),
               onPressed: () {
-                Navigator.pop(context);  // Volta para a página anterior
+                Navigator.pop(context); 
               },
             ),
           ],
@@ -37,7 +37,7 @@ class ListaEticaPage extends StatelessWidget {
               return IconButton(
                 icon: Icon(Icons.menu),
                 onPressed: () {
-                  Scaffold.of(context).openDrawer();  // Abre o menu lateral
+                  Scaffold.of(context).openDrawer(); 
                 },
               );
             },
@@ -55,7 +55,7 @@ class ListaEticaPage extends StatelessWidget {
           ),
         ],
       ),
-      drawer: MenuTelinha(),  // Adiciona o menu lateral (ícone de menu será mostrado automaticamente)
+      drawer: MenuTelinha(), 
       body: GradientBackground(
         child: ListView.builder(
           itemCount: eticaItems.length,

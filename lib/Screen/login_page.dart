@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../main.dart';  // Certifique-se de que o HomeScreen esteja corretamente importado
+import '../main.dart';  
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
-        backgroundColor: const Color(0xFF8AA7EC),  // Cor personalizada
+        backgroundColor: const Color(0xFF8AA7EC),  
         elevation: 0,
       ),
       body: Container(
@@ -111,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
-                          backgroundColor: const Color(0xFF5F85DB),  // Cor personalizada
+                          backgroundColor: const Color(0xFF5F85DB),  
                         ),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
@@ -127,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                       const SizedBox(height: 10),
                       TextButton(
                         onPressed: () {
-                          // Ação para recuperação de senha ou registro
+                          
                         },
                         child: const Text(
                           'Esqueceu sua senha?',
@@ -150,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
     if (email == 'user@example.com' && password == 'password123') {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),  // Verifique se a HomeScreen está corretamente definida
+        MaterialPageRoute(builder: (context) => const HomeScreen()), 
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(

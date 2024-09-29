@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const AuthCheck(),  // Verifica o estado de autenticação
+      home: const AuthCheck(),  
     );
   }
 }
@@ -39,11 +39,9 @@ class AuthCheck extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Aqui você deve implementar a lógica de autenticação real
-    // Vamos simular uma variável de autenticação por enquanto.
-    bool isAuthenticated = false;  // Simulação, troque isso por uma verificação real
+    bool isAuthenticated = false;  
 
-    // Verifica se o usuário está autenticado ou não
+    
     if (isAuthenticated) {
       return const HomeScreen();  // Redireciona para a HomeScreen se autenticado
     } else {
